@@ -8,12 +8,12 @@
     "react-scripts": "1.0.13"
   },
   "scripts": {
-       "start": "npm-run-all --parallel start-dev-api start-dev-ui",
-    "start-dev-api": "json-server --watch api/db.json --routes api/routes.json --port 5000",
-    "start-dev-ui": "webpack-dev-server --hot --inline"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "npm-run-all": "^4.1.1",
     "webpack": "^3.6.0"
-  }
+}
 }
