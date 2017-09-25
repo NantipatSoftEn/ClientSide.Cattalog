@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 
 
+import fetch from 'isomorphic-fetch'
 
 class App extends Component {
   render() {
     return (
       <div className="container">
-          <div className="row">
-            <div classname="col-md-6">.col-xs-6 .col-sm-4</div>
-          </div>
+        <div className='row'>
+        fetch('http://127.0.0.1:5000/api/v1/pages')
+        .then((response) => response.json())
+        </div>
       </div>
     );
   }
