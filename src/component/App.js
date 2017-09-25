@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-
+import { Link } from 'react-router'
 import fetch from 'isomorphic-fetch'
 
 class App extends Component {
@@ -10,13 +10,15 @@ class App extends Component {
             <nav className="navbar navbar-default">
                 <div className="container-fluid">
                     <div className="navbar-header">
-                        <a className="navbar-brand" href="#">WebSiteName</a>
+                        <a className="navbar-brand" href="#">Cattalog</a>
                     </div>
                     <ul className="nav navbar-nav">
-                        <li className="active"><a href="#">Home</a></li>
-                        <li><a href="#">Page 1</a></li>
-                        <li><a href="#">Page 2</a></li>
-                        <li><a href="#">Page 3</a></li>
+
+                        <li className="active"> <Link to={{ pathname: '/' }} >Babel Coder Wiki </Link>  </li>
+
+                        <li>    <Link to={{ pathname: '/pages' }} > All pages </Link>   </li>
+
+                        <li>    <Link to={{ pathname: '#' }} > about </Link>   </li>
                     </ul>
                 </div>
             </nav>
