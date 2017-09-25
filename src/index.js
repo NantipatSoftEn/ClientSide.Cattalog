@@ -12,7 +12,6 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 ReactDOM.render(
 <Router history={browserHistory}>
    <Route path='/' component={App}>
-     <IndexRoute component={Home} />
      <Route path='pages' component={Pages} />
    </Route>
  </Router>

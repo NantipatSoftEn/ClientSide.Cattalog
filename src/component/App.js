@@ -7,9 +7,10 @@ import fetch from 'isomorphic-fetch'
 class App extends Component {
   render() {
     return (
-        <div className='row'>
-          This app
-        </div>
+        <div>
+           <header>Navbar</header>
+           {this.props.children}
+         </div>
     );
   }
 }
