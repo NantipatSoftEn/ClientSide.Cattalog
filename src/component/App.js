@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
 
-
+import Home from './Home';
+import Pages from './Pages';
 import fetch from 'isomorphic-fetch'
 
 class App extends Component {
   render() {
     return (
-      <div className="container">
         <div className='row'>
-        fetch('http://127.0.0.1:5000/api/v1/pages')
-        .then((response) => response.json())
+          This app
         </div>
-      </div>
     );
   }
 }
