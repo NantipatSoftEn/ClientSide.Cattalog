@@ -6,7 +6,7 @@ class Home extends Component {
         <div>
             <Grid>
                 <Row>
-                    <form>
+                    <form action=''> 
                         <FormGroup controlId="formValidationSuccess1" validationState="success">
                             <ControlLabel>Input with success</ControlLabel>
                             <FormControl type="text" />
