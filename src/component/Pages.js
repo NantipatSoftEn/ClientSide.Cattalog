@@ -4,7 +4,6 @@ class Pages extends Component {
     /*  กรณีที่ api ไม่ส่งค่ามา  ต้องทำค่าเริ่มต้นให้มัน */
     state = {
         pages: [],
-        errs:[]
   }
   componentDidMount() {
     fetch('http://localhost:3001/c')
@@ -17,7 +16,6 @@ class Pages extends Component {
   }
 
   render() {
-      console.log(this.state.errs);
     return (
             <div className ='col-md-10'>
                 <table className='table'>
@@ -33,10 +31,9 @@ class Pages extends Component {
                     {
                         this.state.pages.map((page) => (
                         <tr>
-
                         <th>{page.name}</th>
                         <td>{page.facebook}</td>
-                        <td>{page.img}</td>
+                        <td><img src={page.img}  height="42" width="42" /></td>
                         <td>{page.Rank}</td>
                        </tr>
                      ))
@@ -44,8 +41,6 @@ class Pages extends Component {
                     </tbody>
                 </table>
             </div>
-
-
     )
   }
 }
