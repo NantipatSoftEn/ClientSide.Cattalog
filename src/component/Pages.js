@@ -22,16 +22,22 @@ class Pages extends Component {
             <div>
                 <Grid>
                     <Row>
+                    {
+                    this.state.pages.map((page) => (
                         <Col xs={6} md={4}>
-                            <Thumbnail src="http://localhost:3000/viriya1.jpg" alt="242x200">
-                                <h3>Thumbnail label</h3>
-                                <p>Description</p>
+                            <Thumbnail src={page.img} alt="242x200">
+                                <a href={page.facebook}>
+                                    <h3>{page.name}</h3>
+                                 </a>
                                 <p>
-                                    <Button bsStyle="primary">Button</Button>&nbsp;
-                                    <Button bsStyle="default">Button</Button>
+                                    <Button bsStyle="primary">Edit</Button>&nbsp;
+                                    <Button bsStyle="danger">del</Button>&nbsp;
+                                    <Button bsStyle="success"> RanK: {page.Rank}</Button>
                                 </p>
                             </Thumbnail>
                         </Col>
+                        ))
+                    }
                     </Row>
                 </Grid>
             </div>
