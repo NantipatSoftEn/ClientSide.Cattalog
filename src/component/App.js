@@ -14,9 +14,9 @@ class App extends Component {
                     </div>
                     <ul className="nav navbar-nav">
 
-                        <li className="active"> <Link to={{ pathname: '/' }} >Babel Coder Wiki </Link>  </li>
+                        <li> <Link to={{ pathname: '/' }} >Home</Link>  </li>
 
-                        <li>    <Link to={{ pathname: '/pages' }} > All pages </Link>   </li>
+                        <li>    <Link to={{ pathname: '/pages' }} > Show </Link>   </li>
 
                         <li>    <Link to={{ pathname: '' }} > about </Link>   </li>
                     </ul>

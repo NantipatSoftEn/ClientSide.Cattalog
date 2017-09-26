@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import fetch from 'isomorphic-fetch'
+import { Button,Grid,Row,Col,Thumbnail,Image} from 'react-bootstrap';
+
 class Pages extends Component {
     /*  กรณีที่ api ไม่ส่งค่ามา  ต้องทำค่าเริ่มต้นให้มัน */
     state = {
@@ -17,29 +19,21 @@ class Pages extends Component {
 
   render() {
     return (
-            <div className ='col-md-10'>
-                <table className='table'>
-                    <thead>
-                        <tr>
-                            <th>name</th>
-                            <th>facebook</th>
-                            <th>img</th>
-                            <th>Rank</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    {
-                        this.state.pages.map((page) => (
-                        <tr>
-                        <th>{page.name}</th>
-                        <td>{page.facebook}</td>
-                        <td><img src={page.img}  height="42" width="42" /></td>
-                        <td>{page.Rank}</td>
-                       </tr>
-                     ))
-                   }
-                    </tbody>
-                </table>
+            <div>
+                <Grid>
+                    <Row>
+                        <Col xs={6} md={4}>
+                            <Thumbnail src="http://localhost:3000/viriya1.jpg" alt="242x200">
+                                <h3>Thumbnail label</h3>
+                                <p>Description</p>
+                                <p>
+                                    <Button bsStyle="primary">Button</Button>&nbsp;
+                                    <Button bsStyle="default">Button</Button>
+                                </p>
+                            </Thumbnail>
+                        </Col>
+                    </Row>
+                </Grid>
             </div>
     )
   }
