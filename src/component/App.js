@@ -6,7 +6,7 @@ import { Link } from 'react-router'
 class App extends Component {
   render() {
     return (
-        <div classNameName= ''>
+        <div className=''>
             <nav className="navbar navbar-default">
                 <div className="container-fluid">
                     <div className="navbar-header">

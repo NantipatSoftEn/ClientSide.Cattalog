@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+
 import { FormGroup,ControlLabel,HelpBlock,FormControl,Grid,Row,Col,Input} from 'react-bootstrap';
 class Home extends Component {
   render() {
@@ -10,6 +11,7 @@ class Home extends Component {
                     <Col xs={6} md={7}>
                         <form action='http://localhost:3001/c' method='post'>
                         <FormGroup>
+
 
                         </FormGroup>
                             <FormGroup>
