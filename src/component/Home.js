@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { FormGroup,ControlLabel,HelpBlock,FormControl,Grid,Row,Col,Input} from 'react-bootstrap';
+import { FormGroup,HelpBlock,FormControl,Grid,Row,Col,Button} from 'react-bootstrap';
 class Home extends Component {
   render() {
     return (
@@ -9,22 +9,21 @@ class Home extends Component {
                 <Row>
 
                     <Col xs={6} md={7}>
-                        <form action='http://localhost:3001/c' method='post'>
+                        <form onSubmit={this.handleSubmit} method='post'>
                         <FormGroup>
-
-
+                        <FormControl type="file" name='img' />
                         </FormGroup>
                             <FormGroup>
-                                <FormControl type="text" name='name'placeholder="Enter Name"/>
+                                <FormControl type="text" name='name'placeholder="Enter Name" bsSize="large"/>
                             </FormGroup>
                             <FormGroup>
-                                <FormControl type="text" name='facebook'placeholder="Enter facebook"/>
+                                <FormControl type="text" name='facebook'placeholder="Enter facebook" bsSize="large"/>
                             </FormGroup>
                             <FormGroup>
-                                <FormControl type="text" name='rank'placeholder="Enter rank"/>
+                                <FormControl type="text" name='rank'placeholder="Enter rank" bsSize="large"/>
                                 <HelpBlock>Number 0-10000</HelpBlock>
                             </FormGroup>
-                             <input type="submit" value="Submit" bsStyle="success"/>
+                             <Button bsStyle="success" type="submit">Success</Button>
                         </form>
                     </Col>
                 </Row>
