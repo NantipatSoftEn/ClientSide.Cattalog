@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+import { Grid,Row,Col} from 'react-bootstrap';
 class Home extends Component {
   render() {
     return (
@@ -9,7 +10,6 @@ class Home extends Component {
 
                     <Col xs={6} md={7}>
                         
-                        </form>
                     </Col>
                 </Row>
             </Grid>
