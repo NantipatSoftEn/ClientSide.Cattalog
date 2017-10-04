@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
-import { Grid,Row,Col} from 'react-bootstrap';
+import { Grid,Row,Col,FormGroup,InputGroup,FormControl,Button} from 'react-bootstrap';
 class Home extends Component {
     constructor(props) {
         super(props);
-        this.state = {name: 'กรุณากรอกชื่อ', facebook: 'กรุณากรอก link facebook'};
+        this.state = {img:'',name: '', facebook: '',rank:''};
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -16,7 +16,7 @@ class Home extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        fetch('http://localhost:3001/c/create', {
+        fetch('http://localhost:3001/c', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -25,6 +25,7 @@ class Home extends Component {
         body: JSON.stringify({
             name: this.state.name,
             facebook: this.state.facebook,
+            rank: this.state.rank,
         })
     })
   }
@@ -35,11 +36,25 @@ class Home extends Component {
                 <Row>
                     <Col xs={6} md={7}>
                     <form onSubmit={this.handleSubmit}>
-                        <label> Name
-                            <input type="text" ref='name' name='name' placeholder={this.state.name} onChange={this.handleChange} />
-                            <input type="text" ref='name' name='facebook' placeholder={this.state.facebook} onChange={this.handleChange} />
-                        </label>
-                    <input type="submit" value="Submit" />
+                    <FormGroup>
+                        <InputGroup>
+                            <InputGroup.Addon>Name</InputGroup.Addon>
+                                <FormControl type="text" ref='name' name='name' value={this.state.name} onChange={this.handleChange}  />
+                        </InputGroup>
+                    </FormGroup>
+                    <FormGroup>
+                        <InputGroup>
+                            <InputGroup.Addon>Facebook</InputGroup.Addon>
+                                <FormControl type="text" ref='facebook' name='facebook' value={this.state.facebook} onChange={this.handleChange}  />
+                        </InputGroup>
+                    </FormGroup>
+                    <FormGroup>
+                        <InputGroup>
+                            <InputGroup.Addon>Rank</InputGroup.Addon>
+                                <FormControl type="text" ref='rank' name='rank' value={this.state.rank} onChange={this.handleChange}  />
+                        </InputGroup>
+                    </FormGroup>
+                                    <Button type="submit" bsStyle="success">Submit</Button>
                     </form>
                     </Col>
                 </Row>
