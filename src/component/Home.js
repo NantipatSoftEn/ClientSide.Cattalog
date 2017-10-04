@@ -16,7 +16,7 @@ class Home extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        fetch('http://localhost/123', {
+        fetch('http://localhost:3001/c/create', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
