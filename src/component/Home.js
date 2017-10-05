@@ -1,19 +1,17 @@
 import React, { Component } from 'react'
-import ImageUploader from 'react-images-upload';
+
 import { Grid,Row,Col,FormGroup,InputGroup,FormControl,Button} from 'react-bootstrap';
 class Home extends Component {
     constructor(props) {
         super(props);
-        this.state = {pictures: '',name: '', facebook: '',rank:''};
+        this.state = {img: '',name: '', facebook: '',rank:''};
 
-        this.onDrop = this.onDrop.bind(this);
+
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    onDrop(picture) {
-        this.setState({pictures: this.state.pictures.concat(picture),});
-    }
+
 
     handleChange(event) {
         this.setState({ [event.target.name] : event.target.value});
@@ -24,11 +22,11 @@ class Home extends Component {
         fetch('http://localhost:3001/c', {
             method: 'POST',
             headers: {
-                'Accept': 'application/json',
+                //'Accept': 'application/json',
                 'Content-Type': 'application/json',
             },
         body: JSON.stringify({
-            pictures: this.state.pictures,
+            img: this.state.img,
             name: this.state.name,
             facebook: this.state.facebook,
             rank: this.state.rank,
@@ -41,14 +39,12 @@ class Home extends Component {
             <Grid>
                 <Row>
                     <Col xs={6} md={7}>
-                    <form onSubmit={this.handleSubmit}>
-                    <ImageUploader
-                        withIcon={true}
-                        buttonText='Choose images'
-                        onChange={this.onDrop}
-                        imgExtension={['.jpg', '.gif', '.png', '.gif']}
-                        maxFileSize={5242880}
-                    />
+                      <form onSubmit={this.handleSubmit}>
+                    <FormGroup>
+                        <InputGroup>
+                                <FormControl type="file" ref='img' name='img' value={this.state.img} onChange={this.handleChange}  />
+                        </InputGroup>
+                    </FormGroup>
                     <FormGroup>
                         <InputGroup>
                             <InputGroup.Addon>Name</InputGroup.Addon>
