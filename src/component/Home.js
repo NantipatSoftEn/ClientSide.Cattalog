@@ -4,7 +4,7 @@ import { Grid,Row,Col,FormGroup,InputGroup,FormControl,Button} from 'react-boots
 class Home extends Component {
     constructor(props) {
         super(props);
-        this.state = {pictures: [],name: '', facebook: '',rank:''};
+        this.state = {pictures: '',name: '', facebook: '',rank:''};
 
         this.onDrop = this.onDrop.bind(this);
         this.handleChange = this.handleChange.bind(this);
@@ -12,9 +12,7 @@ class Home extends Component {
     }
 
     onDrop(picture) {
-        this.setState({
-            pictures: this.state.pictures.concat(picture),
-        });
+        this.setState({pictures: this.state.pictures.concat(picture),});
     }
 
     handleChange(event) {
@@ -30,6 +28,7 @@ class Home extends Component {
                 'Content-Type': 'application/json',
             },
         body: JSON.stringify({
+            pictures: this.state.pictures,
             name: this.state.name,
             facebook: this.state.facebook,
             rank: this.state.rank,
