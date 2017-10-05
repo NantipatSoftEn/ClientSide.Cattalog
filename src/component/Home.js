@@ -1,13 +1,20 @@
 import React, { Component } from 'react'
-
+import ImageUploader from 'react-images-upload';
 import { Grid,Row,Col,FormGroup,InputGroup,FormControl,Button} from 'react-bootstrap';
 class Home extends Component {
     constructor(props) {
         super(props);
-        this.state = {img:'',name: '', facebook: '',rank:''};
+        this.state = {pictures: [],name: '', facebook: '',rank:''};
 
+        this.onDrop = this.onDrop.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    onDrop(picture) {
+        this.setState({
+            pictures: this.state.pictures.concat(picture),
+        });
     }
 
     handleChange(event) {
@@ -36,6 +43,13 @@ class Home extends Component {
                 <Row>
                     <Col xs={6} md={7}>
                     <form onSubmit={this.handleSubmit}>
+                    <ImageUploader
+                        withIcon={true}
+                        buttonText='Choose images'
+                        onChange={this.onDrop}
+                        imgExtension={['.jpg', '.gif', '.png', '.gif']}
+                        maxFileSize={5242880}
+                    />
                     <FormGroup>
                         <InputGroup>
                             <InputGroup.Addon>Name</InputGroup.Addon>
