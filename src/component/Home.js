@@ -65,7 +65,7 @@ class Home extends Component {
         fetch('http://localhost:3001/c', {
             method: 'POST',
             headers: {
-                //'Accept': 'application/json',
+                'Accept': 'application/json',
                 'Content-Type': 'application/json',
             },
         body: JSON.stringify({
