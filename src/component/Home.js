@@ -1,15 +1,50 @@
 import React, { Component } from 'react'
-
+import request from 'superagent';
 import { Grid,Row,Col,FormGroup,InputGroup,FormControl,Button} from 'react-bootstrap';
+
+const CLOUDINARY_UPLOAD_PRESET = 'd6bx32ar';
+const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/soften57/upload';
+
 class Home extends Component {
     constructor(props) {
+
         super(props);
-        this.state = {img:'',name: '', facebook: '',rank:''};
+
+        this.state = {
+            name: '',
+            facebook: '',
+            rank:'',
+            uploadedFile: null,
+            uploadedFileCloudinaryUrl: ''};
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+    onImageDrop(files) {
+        console.log(files);
+        this.setState({
+        uploadedFile: files[0]
+    });
 
+  this.handleImageUpload(files[0]);
+}
+handleImageUpload(file) {
+    let upload = request.post(CLOUDINARY_UPLOAD_URL)
+                     .field('upload_preset', CLOUDINARY_UPLOAD_PRESET)
+                     .field('file', file);
+
+    upload.end((err, response) => {
+      if (err) {
+        console.error(err);
+      }
+      console.log(response.body.secure_url);
+      if (response.body.secure_url !== '') {
+        this.setState({
+          uploadedFileCloudinaryUrl: response.body.secure_url
+        });
+      }
+    });
+  }
     handleChange(event) {
         this.setState({ [event.target.name] : event.target.value});
     }
@@ -35,6 +70,22 @@ class Home extends Component {
             <Grid>
                 <Row>
                     <Col xs={6} md={7}>
+                    <div className="FileUpload">
+      <Dropzone
+        onDrop={this.onImageDrop.bind(this)}
+        multiple={false}
+        accept="image/*">
+        <div>Drop an image or click to select a file to upload.</div>
+      </Dropzone>
+    </div>
+
+    <div>
+      {this.state.uploadedFileCloudinaryUrl === '' ? null :
+      <div>
+        <p>{this.state.uploadedFile.name}</p>
+        <img src={this.state.uploadedFileCloudinaryUrl} />
+      </div>}
+    </div>
                     <form onSubmit={this.handleSubmit}>
                     <FormGroup>
                         <InputGroup>
