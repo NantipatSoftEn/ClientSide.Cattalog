@@ -17,8 +17,14 @@ class Home extends Component {
         this.setState({ [event.target.name] : event.target.value});
     }
 
+    handleChangeImg(event) {
+        this
+        console.log(event.target.files[0]);
+    }
+
     handleSubmit(event) {
-        event.preventDefault();
+        event.preventDefault()
+
         fetch('http://localhost:3001/c', {
             method: 'POST',
             headers: {
@@ -29,10 +35,10 @@ class Home extends Component {
             img: this.state.img,
             name: this.state.name,
             facebook: this.state.facebook,
-            rank: this.state.rank,
-        })
-    })
-  }
+            rank: this.state.rank
+        });
+    }
+}
   render() {
     return (
         <div>
@@ -42,7 +48,7 @@ class Home extends Component {
                       <form onSubmit={this.handleSubmit}>
                     <FormGroup>
                         <InputGroup>
-                                <FormControl type="file" ref='img' name='img' value={this.state.img} onChange={this.handleChange}  />
+                                <FormControl type="file" ref='img' name='img' value={this.state.img} onChange={this.handleChangeImg}  />
                         </InputGroup>
                     </FormGroup>
                     <FormGroup>
