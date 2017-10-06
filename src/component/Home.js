@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import request from 'superagent';
-import { Grid,Row,Col,FormGroup,InputGroup,FormControl,Button} from 'react-bootstrap';
+import { Grid,Row,Col,FormGroup,InputGroup,FormControl,Button,Alert} from 'react-bootstrap';
 
 import ImageUploader from 'react-images-upload';
 
@@ -70,12 +70,16 @@ class Home extends Component {
         })
     })
   }
+
   render() {
     return (
         <div>
             <Grid>
                 <Row>
                     <Col xs={6} md={7} xsOffset={3}>
+                    <Alert bsStyle="warning">
+                      <strong>Holy guacamole!</strong> Best check yo self, youre not looking too good.
+                    </Alert>
                     <ImageUploader
                         withIcon={true}
                         buttonText='Choose images'
