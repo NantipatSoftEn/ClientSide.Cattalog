@@ -54,14 +54,8 @@ class Home extends Component {
         this.setState({ [event.target.name] : event.target.value});
     }
 
-    handleChangeImg(event) {
-        this
-        console.log(event.target.files[0]);
-    }
-
     handleSubmit(event) {
-        event.preventDefault()
-
+        event.preventDefault();
         fetch('http://localhost:3001/c', {
             method: 'POST',
             headers: {
@@ -72,10 +66,10 @@ class Home extends Component {
             img: this.state.uploadedFileCloudinaryUrl,
             name: this.state.name,
             facebook: this.state.facebook,
-            rank: this.state.rank
-        });
-    }
-}
+            rank: this.state.rank,
+        })
+    })
+  }
   render() {
     return (
         <div>
@@ -90,11 +84,6 @@ class Home extends Component {
                         maxFileSize={5242880}
                     />
                     <form onSubmit={this.handleSubmit}>
-                    <FormGroup>
-                        <InputGroup>
-                                <FormControl type="file" ref='img' name='img' value={this.state.img} onChange={this.handleChangeImg}  />
-                        </InputGroup>
-                    </FormGroup>
                     <FormGroup>
                         <InputGroup>
                             <InputGroup.Addon>Name</InputGroup.Addon>
