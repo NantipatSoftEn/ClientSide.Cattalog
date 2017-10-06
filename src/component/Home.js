@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import request from 'superagent';
 import { Grid,Row,Col,FormGroup,InputGroup,FormControl,Button} from 'react-bootstrap';
 
+import ImageUploader from 'react-images-upload';
+
 const CLOUDINARY_UPLOAD_PRESET = 'd6bx32ar';
 const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/soften57/upload';
 
@@ -20,29 +22,32 @@ class Home extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+
+    /* For ImageUploader */
     onImageDrop(files) {
-        console.log(files);
-        this.setState({
-        uploadedFile: files[0]
-    });
-
-  this.handleImageUpload(files[0]);
-}
-handleImageUpload(file) {
-    let upload = request.post(CLOUDINARY_UPLOAD_URL)
-                     .field('upload_preset', CLOUDINARY_UPLOAD_PRESET)
-                     .field('file', file);
-
-    upload.end((err, response) => {
-      if (err) {
-        console.error(err);
-      }
-      console.log(response.body.secure_url);
-      if (response.body.secure_url !== '') {
-        this.setState({
-          uploadedFileCloudinaryUrl: response.body.secure_url
+            console.log(files);
+            this.setState({
+            uploadedFile: files[0]
         });
-      }
+
+        this.handleImageUpload(files[0]);
+    }
+
+    handleImageUpload(file) {
+        let upload = request.post(CLOUDINARY_UPLOAD_URL)
+                         .field('upload_preset', CLOUDINARY_UPLOAD_PRESET)
+                         .field('file', file);
+
+        upload.end((err, response) => {
+          if (err) {
+            console.error(err);
+          }
+          console.log(response.body.secure_url);
+          if (response.body.secure_url !== '') {
+            this.setState({
+              uploadedFileCloudinaryUrl: response.body.secure_url
+            });
+          }
     });
   }
     handleChange(event) {
@@ -70,7 +75,13 @@ handleImageUpload(file) {
             <Grid>
                 <Row>
                     <Col xs={6} md={7}>
-                
+                    <ImageUploader
+                        withIcon={true}
+                        buttonText='Choose images'
+                        onChange={this.onImageDrop}
+                        imgExtension={['.jpg', '.gif', '.png', '.gif']}
+                        maxFileSize={5242880}
+                    />
                     <form onSubmit={this.handleSubmit}>
                     <FormGroup>
                         <InputGroup>
