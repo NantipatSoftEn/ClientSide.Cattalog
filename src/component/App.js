@@ -10,7 +10,7 @@ class App extends Component {
             <nav className="navbar navbar-default">
                 <div className="container-fluid">
                     <div className="navbar-header">
-                        <a className="navbar-brand" >Cattalog</a>
+                        <a className="navbar-brand" >PSU Cattalog</a>
                     </div>
                     <ul className="nav navbar-nav">
 

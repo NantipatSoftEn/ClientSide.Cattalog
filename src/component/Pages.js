@@ -24,15 +24,15 @@ class Pages extends Component {
                     <Row>
                     {
                     this.state.pages.map((page) => (
-                        <Col xs={6} md={4}>
+                        <Col xs={6} md={4} >
                             <Thumbnail src={page.img} alt="242x200">
                                 <a href={page.facebook}>
                                     <h3>{page.name}</h3>
                                  </a>
                                 <p>
                                     <Button bsStyle="primary">Edit</Button>&nbsp;
-                                    <Button bsStyle="danger">del</Button>&nbsp;
-                                    <Button bsStyle="success"> RanK: {page.Rank}</Button>
+                                    <Button bsStyle="danger">Del</Button>&nbsp;
+                                    <Button bsStyle="success"> RanK: {page.rank}</Button>
                                 </p>
                             </Thumbnail>
                         </Col>
