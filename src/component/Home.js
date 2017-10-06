@@ -70,22 +70,7 @@ handleImageUpload(file) {
             <Grid>
                 <Row>
                     <Col xs={6} md={7}>
-                    <div className="FileUpload">
-      <Dropzone
-        onDrop={this.onImageDrop.bind(this)}
-        multiple={false}
-        accept="image/*">
-        <div>Drop an image or click to select a file to upload.</div>
-      </Dropzone>
-    </div>
-
-    <div>
-      {this.state.uploadedFileCloudinaryUrl === '' ? null :
-      <div>
-        <p>{this.state.uploadedFile.name}</p>
-        <img src={this.state.uploadedFileCloudinaryUrl} />
-      </div>}
-    </div>
+                
                     <form onSubmit={this.handleSubmit}>
                     <FormGroup>
                         <InputGroup>
