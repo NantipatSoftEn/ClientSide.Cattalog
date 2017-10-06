@@ -63,6 +63,7 @@ class Home extends Component {
                 'Content-Type': 'application/json',
             },
         body: JSON.stringify({
+            img: this.state.uploadedFileCloudinaryUrl,
             name: this.state.name,
             facebook: this.state.facebook,
             rank: this.state.rank,
@@ -78,7 +79,7 @@ class Home extends Component {
                     <ImageUploader
                         withIcon={true}
                         buttonText='Choose images'
-                        onChange={this.onImageDrop}
+                        onChange={this.onImageDrop.bind(this)}
                         imgExtension={['.jpg', '.gif', '.png', '.gif']}
                         maxFileSize={5242880}
                     />
