@@ -75,7 +75,7 @@ class Home extends Component {
         <div>
             <Grid>
                 <Row>
-                    <Col xs={6} md={7}>
+                    <Col xs={6} md={7} xsOffset={3}>
                     <ImageUploader
                         withIcon={true}
                         buttonText='Choose images'
@@ -99,10 +99,12 @@ class Home extends Component {
                     <FormGroup>
                         <InputGroup>
                             <InputGroup.Addon>Rank</InputGroup.Addon>
-                                <FormControl type="text" ref='rank' name='rank' value={this.state.rank} onChange={this.handleChange}  />
+                                <FormControl type="number" min="-10" max="99" ref='rank' name='rank' value={this.state.rank} onChange={this.handleChange}  />
                         </InputGroup>
                     </FormGroup>
-                                    <Button type="submit" bsStyle="success">Submit</Button>
+                                <center>
+                                    <Button type="submit" bsStyle="success">เก็บรูปในคลัง</Button>
+                                </center>
                     </form>
                     </Col>
                 </Row>
