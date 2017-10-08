@@ -4,6 +4,8 @@ import { Grid,Row,Col,FormGroup,InputGroup,FormControl,Button} from 'react-boots
 
 import ImageUploader from 'react-images-upload';
 
+import AlertContainer from 'react-alert'
+
 const CLOUDINARY_UPLOAD_PRESET = 'd6bx32ar';
 const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/soften57/upload';
 
@@ -25,17 +27,13 @@ class Home extends Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+
         this.resetState = this.resetState.bind(this);
-    }
-    resetState() {
-        this.setState(initialState);
     }
     /* For ImageUploader */
     onImageDrop(files) {
             console.log(files);
-            this.setState({
-            uploadedFile: files[0]
-        });
+            this.setState({uploadedFile: files[0]});
 
         this.handleImageUpload(files[0]);
     }
@@ -49,6 +47,7 @@ class Home extends Component {
           if (err) {
             console.error(err);
           }
+
           console.log(response.body.secure_url);
           if (response.body.secure_url !== '') {
             this.setState({
@@ -79,6 +78,24 @@ class Home extends Component {
     })
     this.resetState();
   }
+  resetState() {
+      this.setState(initialState);
+  }
+  alertOptions = {
+    offset: 14,
+    position: 'bottom left',
+    theme: 'dark',
+    time: 5000,
+    transition: 'scale'
+  }
+  showAlert = () => {
+    this.msg.show('Some text or component', {
+      time: 2000,
+      type: 'success',
+      icon: '',
+    })
+  }
+
   render() {
     return (
         <div>
@@ -88,6 +105,7 @@ class Home extends Component {
                     <ImageUploader
                         withIcon={true}
                         buttonText='Choose images'
+                        fileSizeError='fileSizeError'
                         onChange={this.onImageDrop.bind(this)}
                         imgExtension={['.jpg', '.gif', '.png', '.gif']}
                         maxFileSize={5242880}
@@ -112,13 +130,15 @@ class Home extends Component {
                     <FormGroup>
                         <InputGroup>
                             <InputGroup.Addon>Rank</InputGroup.Addon>
-                                <FormControl type="number" min="-10" max="99" ref='rank' name='rank'
+                                <FormControl type="number" min="-10" max="99"
+                                 ref='rank' name='rank'
                                  value={this.state.rank}
                                  onChange={this.handleChange}  />
                         </InputGroup>
                     </FormGroup>
+                    <AlertContainer ref={a => this.msg = a} {...this.alertOptions} />
                                 <center>
-                                    <Button type="submit" bsStyle="success">เก็บรูปในคลัง</Button>
+                                    <Button type="submit" bsStyle="success" onClick={this.showAlert}>เก็บรูปในคลัง</Button>
                                 </center>
                     </form>
                     </Col>
