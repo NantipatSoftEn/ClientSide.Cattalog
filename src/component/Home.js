@@ -8,13 +8,11 @@ const CLOUDINARY_UPLOAD_PRESET = 'd6bx32ar';
 const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/soften57/upload';
 
 const initialState = {
-  this.state = {
-      name: '',
-      facebook: '',
-      rank:'',
-      uploadedFile: null,
-      uploadedFileCloudinaryUrl: ''};
-
+    name:'',
+    facebook:'',
+    rank:'',
+    uploadedFile:null,
+    uploadedFileCloudinaryUrl:'',
 };
 
 class Home extends Component {
@@ -22,17 +20,16 @@ class Home extends Component {
 
         super(props);
 
-        this.state = {
-            name: '',
-            facebook: '',
-            rank:'',
-            uploadedFile: null,
-            uploadedFileCloudinaryUrl: ''};
+        this.state = initialState;
+
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.resetState = this.resetState.bind(this);
     }
-
+    resetState() {
+        this.setState(initialState);
+    }
     /* For ImageUploader */
     onImageDrop(files) {
             console.log(files);
@@ -62,6 +59,7 @@ class Home extends Component {
   }
     handleChange(event) {
         this.setState({ [event.target.name] : event.target.value});
+
     }
 
     handleSubmit(event) {
@@ -79,6 +77,7 @@ class Home extends Component {
             rank: this.state.rank,
         })
     })
+    this.resetState();
   }
   render() {
     return (
@@ -93,23 +92,29 @@ class Home extends Component {
                         imgExtension={['.jpg', '.gif', '.png', '.gif']}
                         maxFileSize={5242880}
                     />
-                    <form onSubmit={this.handleSubmit}>
+                    <form onSubmit={this.handleSubmit} >
                     <FormGroup>
                         <InputGroup>
                             <InputGroup.Addon>Name</InputGroup.Addon>
-                                <FormControl type="text" ref='name' name='name' value={this.state.name} onChange={this.handleChange}  />
+                                <FormControl type="text" ref='name' name='name'
+                                value={this.state.name}
+                                onChange={this.handleChange}  />
                         </InputGroup>
                     </FormGroup>
                     <FormGroup>
                         <InputGroup>
                             <InputGroup.Addon>Facebook</InputGroup.Addon>
-                                <FormControl type="text" ref='facebook' name='facebook' value={this.state.facebook} onChange={this.handleChange}  />
+                                <FormControl type="text" ref='facebook' name='facebook'
+                                value={this.state.facebook}
+                                onChange={this.handleChange}  />
                         </InputGroup>
                     </FormGroup>
                     <FormGroup>
                         <InputGroup>
                             <InputGroup.Addon>Rank</InputGroup.Addon>
-                                <FormControl type="number" min="-10" max="99" ref='rank' name='rank' value={this.state.rank} onChange={this.handleChange}  />
+                                <FormControl type="number" min="-10" max="99" ref='rank' name='rank'
+                                 value={this.state.rank}
+                                 onChange={this.handleChange}  />
                         </InputGroup>
                     </FormGroup>
                                 <center>
