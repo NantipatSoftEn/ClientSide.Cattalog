@@ -89,7 +89,18 @@ class Home extends Component {
     transition: 'scale'
   }
   showAlert = () => {
-    this.msg.show('เก็บข้อมูลเรียบร้อย', {time: 2000,type: 'success',icon: '',})
+    if (this.state === initialState)
+        this.msg.error('ว่างเปล่า', {time: 2000,type: '',icon: '',})
+    else if (this.state.uploadedFileCloudinaryUrl === null ||
+             this.state.name === null ||
+             this.state.facebook == null ||
+             this.state.rank === null )
+             /*
+                ยังไม่เข้าเงื่อนนี้ที เดียวมาทำต่อ
+             */
+        this.msg.info('Some info message or component')
+    else
+        this.msg.show('เก็บข้อมูลเรียบร้อย', {time: 2000,type: 'success',icon: '',})
   }
 
   render() {
