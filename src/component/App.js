@@ -18,7 +18,7 @@ class App extends Component {
 
                         <li>    <Link to={{ pathname: '/pages' }} > Show </Link>   </li>
 
-                        <li>    <Link to={{ pathname: '/test' }} > about </Link>   </li>
+                        <li>    <Link to={{ pathname: '/A' }} > about </Link>   </li>
                     </ul>
                 </div>
             </nav>

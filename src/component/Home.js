@@ -7,6 +7,16 @@ import ImageUploader from 'react-images-upload';
 const CLOUDINARY_UPLOAD_PRESET = 'd6bx32ar';
 const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/soften57/upload';
 
+const initialState = {
+  this.state = {
+      name: '',
+      facebook: '',
+      rank:'',
+      uploadedFile: null,
+      uploadedFileCloudinaryUrl: ''};
+
+};
+
 class Home extends Component {
     constructor(props) {
 
