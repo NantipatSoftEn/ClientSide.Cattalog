@@ -89,11 +89,7 @@ class Home extends Component {
     transition: 'scale'
   }
   showAlert = () => {
-    this.msg.show('Some text or component', {
-      time: 2000,
-      type: 'success',
-      icon: '',
-    })
+    this.msg.show('เก็บข้อมูลเรียบร้อย', {time: 2000,type: 'success',icon: '',})
   }
 
   render() {
