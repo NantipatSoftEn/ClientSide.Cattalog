@@ -25,7 +25,6 @@ class Pages extends Component {
                     {
                     this.state.pages.map((page) => (
                         <Col xs={6} md={4} >
-                            <li key = {page._id} >
                                 <Thumbnail src={page.img}  alt="242x200">
                                     <a href={page.facebook}>
                                         <h3>{page.name}</h3>
@@ -44,7 +43,6 @@ class Pages extends Component {
                                     <Button bsStyle="success"> RanK: {page.rank}</Button>
                                     </p>
                                 </Thumbnail>
-                            </li>
                         </Col>
                         ))
                     }
