@@ -17,6 +17,8 @@ const initialState = {
     uploadedFileCloudinaryUrl:'',
 };
 
+const ReadySend  =  false;
+
 class Home extends Component {
     constructor(props) {
 
@@ -63,20 +65,22 @@ class Home extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        fetch('http://localhost:3001/c', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-        body: JSON.stringify({
-            img: this.state.uploadedFileCloudinaryUrl,
-            name: this.state.name,
-            facebook: this.state.facebook,
-            rank: this.state.rank,
+        if (ReadySend) {
+            fetch('http://localhost:3001/c', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+            body: JSON.stringify({
+                img: this.state.uploadedFileCloudinaryUrl,
+                name: this.state.name,
+                facebook: this.state.facebook,
+                rank: this.state.rank,
+            })
         })
-    })
-    this.resetState();
+        this.resetState();
+        }
   }
   resetState() {
       this.setState(initialState);
@@ -88,19 +92,23 @@ class Home extends Component {
     time: 5000,
     transition: 'scale'
   }
+  CheckForsomeFormEmty(){
+      return   this.state.name === '' ||
+               this.state.facebook === '' ||
+               this.state.rank === '' ||
+               this.state.uploadedFileCloudinaryUrl === ''
+  }
   showAlert = () => {
     if (this.state === initialState)
-        this.msg.error('ว่างเปล่า', {time: 2000,type: '',icon: '',})
-    else if (this.state.uploadedFileCloudinaryUrl === null ||
-             this.state.name === null ||
-             this.state.facebook == null ||
-             this.state.rank === null )
-             /*
-                ยังไม่เข้าเงื่อนนี้ที เดียวมาทำต่อ
-             */
-        this.msg.info('Some info message or component')
+        this.msg.error('ว่างเปล่า',
+        {time: 2000,type: '',icon: '',});
+
+    else if (this.CheckForsomeFormEmty())
+             this.msg.info('ยังไม่กรอกข้อมูลบางอันเลยนะ',
+             {time: 2000,type: 'success',icon: '',})
     else
-        this.msg.show('เก็บข้อมูลเรียบร้อย', {time: 2000,type: 'success',icon: '',})
+        this.msg.show('เก็บข้อมูลเรียบร้อย',
+        {time: 2000,type: 'success',icon: '',})
   }
 
   render() {
