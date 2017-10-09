@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import fetch from 'isomorphic-fetch'
 import { Button,Grid,Row,Col,Thumbnail} from 'react-bootstrap';
-
+import { Link } from 'react-router'
 class Pages extends Component {
     /*  กรณีที่ api ไม่ส่งค่ามา  ต้องทำค่าเริ่มต้นให้มัน */
     state = {
@@ -31,7 +31,7 @@ class Pages extends Component {
                                  </a>
                                 <p>
                                     <Button bsStyle="primary">Edit</Button>&nbsp;
-                                    <Button bsStyle="danger">Del</Button>&nbsp;
+                                    <Button bsStyle="danger" >Del</Button>&nbsp;
                                     <Button bsStyle="success"> RanK: {page.rank}</Button>
                                 </p>
                             </Thumbnail>
