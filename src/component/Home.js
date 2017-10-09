@@ -17,7 +17,7 @@ const initialState = {
     uploadedFileCloudinaryUrl:'',
 };
 
-const ReadySend  =  false;
+let ReadySend  =  false;
 
 class Home extends Component {
     constructor(props) {
@@ -80,13 +80,15 @@ class Home extends Component {
             })
         })
         this.resetState();
+        
+        ReadySend = false;
         }
   }
   resetState() {
       this.setState(initialState);
   }
   alertOptions = {
-    offset: 14,
+    offset: 20,
     position: 'bottom left',
     theme: 'dark',
     time: 5000,
@@ -106,9 +108,14 @@ class Home extends Component {
     else if (this.CheckForsomeFormEmty())
              this.msg.info('ยังไม่กรอกข้อมูลบางอันเลยนะ',
              {time: 2000,type: 'success',icon: '',})
-    else
+
+    else{
         this.msg.show('เก็บข้อมูลเรียบร้อย',
         {time: 2000,type: 'success',icon: '',})
+
+        ReadySend = true;
+    }
+
   }
 
   render() {
