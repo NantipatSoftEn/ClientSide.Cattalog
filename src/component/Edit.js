@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 class Edit extends Component {
     constructor(props) {
         super(props);
-        console.log(this.props.location.state);
+        //console.log(this.props.match.params.id);
     }
 
   render() {

@@ -19,7 +19,7 @@ ReactDOM.render(
    <Route path='/' component={App}>
     <IndexRoute component={Home} />
      <Route path='/pages' component={Pages} />
-     <Route path='/Edit' component={Edit} />
+     <Route path='/Edit/:id' component={Edit} />
      <Route path='/Delete' component={Delete} />
    </Route>
  </Router>

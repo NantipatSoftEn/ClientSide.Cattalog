@@ -25,24 +25,26 @@ class Pages extends Component {
                     {
                     this.state.pages.map((page) => (
                         <Col xs={6} md={4} >
-                            <Thumbnail src={page.img} alt="242x200">
-                                <a href={page.facebook}>
-                                    <h3>{page.name}</h3>
-                                 </a>
-                                <p>
-                                <Link to={{ pathname: '/Edit' ,state: { idObj:{page._id} }}
-                                className="btn btn-primary" >
-                                    Edit
-                                </Link> &nbsp;
+                            <li key = {page._id} >
+                                <Thumbnail src={page.img}  alt="242x200">
+                                    <a href={page.facebook}>
+                                        <h3>{page.name}</h3>
+                                     </a>
+                                    <p>
+                                    <Link to={{ pathname: `/Edit/${ page._id }` }}
+                                    className="btn btn-primary" >
+                                        Edit
+                                    </Link> &nbsp;
 
-                                <Link to={{ pathname: '/Delete' }}
-                                className="btn btn-danger">
-                                    Delete
-                                </Link> &nbsp;
+                                    <Link to={{ pathname: '/Delete' }}
+                                    className="btn btn-danger">
+                                        Delete
+                                    </Link> &nbsp;
 
-                                <Button bsStyle="success"> RanK: {page.rank}</Button>
-                                </p>
-                            </Thumbnail>
+                                    <Button bsStyle="success"> RanK: {page.rank}</Button>
+                                    </p>
+                                </Thumbnail>
+                            </li>
                         </Col>
                         ))
                     }
