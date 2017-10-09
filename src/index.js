@@ -5,6 +5,7 @@ import App from './component/App';
 import Home from './component/Home';
 import Pages from './component/Pages';
 import Edit from './component/Edit';
+import Delete from './component/Delete';
 import {
   Router,
   Route,
@@ -19,6 +20,7 @@ ReactDOM.render(
     <IndexRoute component={Home} />
      <Route path='/pages' component={Pages} />
      <Route path='/Edit' component={Edit} />
+     <Route path='/Delete' component={Delete} />
    </Route>
  </Router>
 , document.getElementById('root'));

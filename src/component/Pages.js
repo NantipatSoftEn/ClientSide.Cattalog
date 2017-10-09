@@ -30,9 +30,17 @@ class Pages extends Component {
                                     <h3>{page.name}</h3>
                                  </a>
                                 <p>
-                                    <Button bsStyle="primary">Edit</Button>&nbsp;
-                                    <Button bsStyle="danger" >Del</Button>&nbsp;
-                                    <Button bsStyle="success"> RanK: {page.rank}</Button>
+                                <Link to={{ pathname: '/Edit' }}
+                                className="btn btn-primary" >
+                                    Edit
+                                </Link>&nbsp;
+
+                                <Link to={{ pathname: '/Delete' }}
+                                className="btn btn-danger">
+                                    Delete
+                                </Link> &nbsp;
+
+                                <Button bsStyle="success"> RanK: {page.rank}</Button>
                                 </p>
                             </Thumbnail>
                         </Col>

@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 
 
-class Edit extends Component {
+class Delect extends Component {
 
   render() {
     return (
     <div>
-    FUck
+    FUck d
     </div>
     )
   }
 }
-export default Edit
+export default Delect
