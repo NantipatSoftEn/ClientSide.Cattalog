@@ -30,10 +30,10 @@ class Pages extends Component {
                                     <h3>{page.name}</h3>
                                  </a>
                                 <p>
-                                <Link to={{ pathname: '/Edit' }}
+                                <Link to={{ pathname: '/Edit' ,query: { the: 'query' } }}
                                 className="btn btn-primary" >
                                     Edit
-                                </Link>&nbsp;
+                                </Link> &nbsp;
 
                                 <Link to={{ pathname: '/Delete' }}
                                 className="btn btn-danger">
