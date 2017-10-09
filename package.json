@@ -5,6 +5,7 @@
   "dependencies": {
     "isomorphic-fetch": "^2.2.1",
     "react": "^15.6.2",
+    "react-alert": "^2.3.0",
     "react-bootstrap": "^0.31.3",
     "react-dom": "^15.6.2",
     "react-file-input": "^0.2.5",
