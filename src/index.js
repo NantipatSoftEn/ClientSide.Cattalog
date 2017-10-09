@@ -4,10 +4,6 @@ import './bootstrap/app.css';
 import App from './component/App';
 import Home from './component/Home';
 import Pages from './component/Pages';
-
-import A from './component/A';
-
-
 import {
   Router,
   Route,
@@ -21,7 +17,7 @@ ReactDOM.render(
    <Route path='/' component={App}>
     <IndexRoute component={Home} />
      <Route path='/pages' component={Pages} />
-     <Route path='/A' component={A} />
+
    </Route>
  </Router>
 , document.getElementById('root'));
