@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-
-
 import { Button,Grid,Row,Col,Thumbnail} from 'react-bootstrap';
+
+const initialState = { person:[]};
 class Edit extends Component {
     constructor(props) {
         super(props);
         console.log(this.props.params.id);
-        this.state = {person:[]};
+        this.state = initialState;
     }
     componentDidMount() {
       fetch('http://localhost:3001/c/'+this.props.params.id)
