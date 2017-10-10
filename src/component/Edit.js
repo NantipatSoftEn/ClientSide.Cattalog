@@ -6,7 +6,6 @@ class Edit extends Component {
     constructor(props) {
         super(props);
         console.log(this.props.params.id);
-        this.state({gg:''});
     }
     state = {
         pages: [],
