@@ -6,19 +6,15 @@ class Edit extends Component {
     constructor(props) {
         super(props);
         console.log(this.props.params.id);
+        this.state = {person:[]};
     }
-    state = {
-        pages: [],
-  }
-
     componentDidMount() {
       fetch('http://localhost:3001/c/'+this.props.params.id)
         .then(response => {
             return response.json()
         })
-        .then(pages =>
-            //console.log(pages)
-            this.setState( { pages } )
+        .then(data =>
+            this.setState({person:data} )
         )
 
     }
@@ -27,7 +23,7 @@ class Edit extends Component {
         <div>
             <Grid>
                 <Row>
-                {this.state.pages.name}
+                    {this.state.person.name}
                 </Row>
             </Grid>
         </div>
