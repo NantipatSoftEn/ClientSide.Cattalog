@@ -57,7 +57,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/static/";
+/******/ 	__webpack_require__.p = "static/";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 0);
@@ -67,7 +67,7 @@
 /* 0 */
 /***/ (function(module, exports) {
 
-eval("throw new Error(\"Module parse failed: /Applications/MAMP/htdocs/api/src/index.js Unexpected token (7:16)\\nYou may need an appropriate loader to handle this file type.\\n| import registerServiceWorker from './registerServiceWorker';\\n| \\n| ReactDOM.render(<App />, document.getElementById('root'));\\n| registerServiceWorker();\\n| \");\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/index.js\n// module id = 0\n// module chunks = 0\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("throw new Error(\"Module parse failed: /Applications/MAMP/htdocs/react.api/src/index.js Unexpected token (18:0)\\nYou may need an appropriate loader to handle this file type.\\n| \\n| ReactDOM.render(\\n| <Router history={browserHistory}>\\n|    <Route path='/' component={App}>\\n|     <IndexRoute component={Home} />\");\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/index.js\n// module id = 0\n// module chunks = 0\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 /******/ ]);
