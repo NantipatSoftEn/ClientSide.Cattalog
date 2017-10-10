@@ -80,7 +80,7 @@ class Home extends Component {
             })
         })
         this.resetState();
-        
+
         ReadySend = false;
         }
   }
@@ -133,7 +133,7 @@ class Home extends Component {
                         maxFileSize={5242880}
                     />
                     <form onSubmit={this.handleSubmit} >
-                    <FormGroup>
+                    <FormGroup bsSize="large">
                         <InputGroup>
                             <InputGroup.Addon>Name</InputGroup.Addon>
                                 <FormControl type="text" ref='name' name='name'
@@ -141,7 +141,7 @@ class Home extends Component {
                                 onChange={this.handleChange}  />
                         </InputGroup>
                     </FormGroup>
-                    <FormGroup>
+                    <FormGroup bsSize="large">
                         <InputGroup>
                             <InputGroup.Addon>Facebook</InputGroup.Addon>
                                 <FormControl type="text" ref='facebook' name='facebook'
@@ -149,7 +149,7 @@ class Home extends Component {
                                 onChange={this.handleChange}  />
                         </InputGroup>
                     </FormGroup>
-                    <FormGroup>
+                    <FormGroup bsSize="large">
                         <InputGroup>
                             <InputGroup.Addon>Rank</InputGroup.Addon>
                                 <FormControl type="number" min="-10" max="99"
