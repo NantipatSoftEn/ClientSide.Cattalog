@@ -1,20 +1,17 @@
 import React, { Component } from 'react'
-import request from 'superagent';
+
 import { Grid,Row,Col,FormGroup,InputGroup,FormControl,Button} from 'react-bootstrap';
 
-import ImageUploader from 'react-images-upload';
+
 
 import AlertContainer from 'react-alert'
 
-const CLOUDINARY_UPLOAD_PRESET = 'd6bx32ar';
-const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/soften57/upload';
+
 
 const initialState = {
     name:'',
     facebook:'',
     rank:'',
-    uploadedFile:null,
-    uploadedFileCloudinaryUrl:'',
 };
 
 let ReadySend  =  false;
@@ -23,7 +20,6 @@ class FormCon extends Component {
     constructor(props) {
 
         super(props);
-
         this.state = initialState;
 
 
@@ -100,7 +96,6 @@ class FormCon extends Component {
             <Grid>
                 <Row>
                     <Col xs={6} md={7} xsOffset={3}>
-
                     <form onSubmit={this.handleSubmit} >
                     <FormGroup bsSize="large">
                         <InputGroup>
