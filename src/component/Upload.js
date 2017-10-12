@@ -4,7 +4,7 @@ import { Grid,Row,Col} from 'react-bootstrap';
 
 import ImageUploader from 'react-images-upload';
 
-import FormCon from './FormCon';
+import FormContainer from './FormContainer';
 
 const CLOUDINARY_UPLOAD_PRESET = 'd6bx32ar';
 const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/soften57/upload';
@@ -58,7 +58,7 @@ class Upload extends Component {
                         maxFileSize={5242880}
                     />
                     </Col>
-                    <FormCon upload={this.state.uploadedFileCloudinaryUrl}/>
+                    <FormContainer upload={this.state.uploadedFileCloudinaryUrl}/>
                 </Row>
             </Grid>
        </div>

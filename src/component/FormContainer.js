@@ -16,7 +16,7 @@ const initialState = {
 
 let ReadySend  =  false;
 
-class FormCon extends Component {
+class FormContainer extends Component {
     constructor(props) {
 
         super(props);
@@ -136,4 +136,4 @@ class FormCon extends Component {
     )
   }
 }
-export default FormCon
+export default FormContainer
