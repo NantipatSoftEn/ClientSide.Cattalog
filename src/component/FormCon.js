@@ -32,32 +32,8 @@ class FormCon extends Component {
 
         this.resetState = this.resetState.bind(this);
     }
-    /* For ImageUploader */
-    onImageDrop(files) {
-            console.log(files);
-            this.setState({uploadedFile: files[0]});
 
-        this.handleImageUpload(files[0]);
-    }
 
-    handleImageUpload(file) {
-        let upload = request.post(CLOUDINARY_UPLOAD_URL)
-                         .field('upload_preset', CLOUDINARY_UPLOAD_PRESET)
-                         .field('file', file);
-
-        upload.end((err, response) => {
-          if (err) {
-            console.error(err);
-          }
-
-          console.log(response.body.secure_url);
-          if (response.body.secure_url !== '') {
-            this.setState({
-              uploadedFileCloudinaryUrl: response.body.secure_url
-            });
-          }
-    });
-  }
     handleChange(event) {
         this.setState({ [event.target.name] : event.target.value});
 
@@ -124,14 +100,7 @@ class FormCon extends Component {
             <Grid>
                 <Row>
                     <Col xs={6} md={7} xsOffset={3}>
-                    <ImageUploader
-                        withIcon={true}
-                        buttonText='Choose images'
-                        fileSizeError='fileSizeError'
-                        onChange={this.onImageDrop.bind(this)}
-                        imgExtension={['.jpg', '.gif', '.png', '.gif']}
-                        maxFileSize={5242880}
-                    />
+
                     <form onSubmit={this.handleSubmit} >
                     <FormGroup bsSize="large">
                         <InputGroup>
