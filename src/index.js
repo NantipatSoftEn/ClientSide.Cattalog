@@ -7,7 +7,7 @@ import Pages from './component/Pages';
 import Edit from './component/Edit';
 import Delete from './component/Delete';
 
-import Upload from './component/Upload';
+import FormCon from './component/FormCon';
 import {
   Router,
   Route,
@@ -24,7 +24,7 @@ ReactDOM.render(
      <Route path='/Edit/:id' component={Edit} />
      <Route path='/Delete' component={Delete} />
 
-     <Route path='/test' component={Upload} />
+     <Route path='/test' component={FormCon} />
    </Route>
  </Router>
 , document.getElementById('root'));
