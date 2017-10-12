@@ -12,6 +12,7 @@ const initialState = {
     name:'',
     facebook:'',
     rank:'',
+    upload:''
 };
 
 let ReadySend  =  false;
@@ -20,9 +21,9 @@ class FormContainer extends Component {
     constructor(props) {
 
         super(props);
-
+        let {upload,name,facebook,rank,img} = this.props;
         this.state = initialState;
-
+        this.setState({upload:upload});
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
