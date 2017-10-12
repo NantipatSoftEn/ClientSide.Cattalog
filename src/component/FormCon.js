@@ -20,6 +20,7 @@ class FormCon extends Component {
     constructor(props) {
 
         super(props);
+
         this.state = initialState;
 
 
@@ -45,7 +46,7 @@ class FormCon extends Component {
                     'Content-Type': 'application/json',
                 },
             body: JSON.stringify({
-                img: this.state.uploadedFileCloudinaryUrl,
+                img: this.props.upload,
                 name: this.state.name,
                 facebook: this.state.facebook,
                 rank: this.state.rank,
@@ -96,6 +97,7 @@ class FormCon extends Component {
             <Grid>
                 <Row>
                     <Col xs={6} md={7} xsOffset={3}>
+
                     <form onSubmit={this.handleSubmit} >
                     <FormGroup bsSize="large">
                         <InputGroup>
