@@ -6,6 +6,8 @@ import Home from './component/Home';
 import Pages from './component/Pages';
 import Edit from './component/Edit';
 import Delete from './component/Delete';
+
+import FormContainer from './component/FormContainer';
 import {
   Router,
   Route,
@@ -21,6 +23,8 @@ ReactDOM.render(
      <Route path='/pages' component={Pages} />
      <Route path='/Edit/:id' component={Edit} />
      <Route path='/Delete' component={Delete} />
+
+     <Route path='/test' component={FormContainer} />
    </Route>
  </Router>
 , document.getElementById('root'));
