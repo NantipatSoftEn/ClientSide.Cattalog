@@ -43,7 +43,7 @@ class FormContainer extends Component {
     handleSubmit(event) {
         event.preventDefault();
         if (ReadySend) {
-            fetch('http://localhost:3001/c', {
+            fetch('http://localhost:3001/c'+this.props.id, {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',

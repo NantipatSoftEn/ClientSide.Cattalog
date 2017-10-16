@@ -30,6 +30,7 @@ class Edit extends Component {
                 name={this.state.person.name}
                 facebook={this.state.person.facebook}
                 rank={this.state.person.rank}
+                id={this.props.params.id}
                 />
                 </Row>
             </Grid>
