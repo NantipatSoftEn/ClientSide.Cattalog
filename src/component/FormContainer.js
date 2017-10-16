@@ -47,7 +47,6 @@ class FormContainer extends Component {
         if (ReadySend) {
             fetch('http://localhost:3001/c/'+id, {
                 method: 'PUT',
-                mode: 'CORS',
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json',
