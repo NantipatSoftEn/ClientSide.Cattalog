@@ -75,9 +75,9 @@ class FormContainer extends Component {
     transition: 'scale'
   }
   CheckForsomeFormEmty(){
-      return   this.state.name === '' ||
-               this.state.facebook === '' ||
-               this.state.rank === ''
+      return   !this.state.name  ||
+               !this.state.facebook  ||
+               !this.state.rank 
   }
   showAlert = () => {
     if (this.state === initialState)
