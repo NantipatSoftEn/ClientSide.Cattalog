@@ -43,10 +43,11 @@ class FormContainer extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        const  id =  !!this.props.id ?  this.props.id: ''
+        let type = !!this.props.id ?  'PUT': 'POST';
+        let  id =  !!this.props.id ?  this.props.id: ''
         if (ReadySend) {
             fetch('http://localhost:3001/c/'+id, {
-                method: 'PUT',
+                method: type,
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json',
