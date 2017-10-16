@@ -29,7 +29,8 @@ class Edit extends Component {
                 <FormContainer
                 name={this.state.person.name}
                 facebook={this.state.person.facebook}
-                rank={this.state.person.rank} />
+                rank={this.state.person.rank}
+                />
                 </Row>
             </Grid>
         </div>

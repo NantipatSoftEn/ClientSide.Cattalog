@@ -16,14 +16,17 @@ const initialState = {
 };
 
 let ReadySend  =  false;
-
 class FormContainer extends Component {
     constructor(props) {
 
         super(props);
-        let {upload,name,facebook,rank,img} = this.props;
+
+
         this.state = initialState;
-        this.setState({upload:upload});
+
+
+
+        this.setState({upload:this.props.upload});
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -93,6 +96,9 @@ class FormContainer extends Component {
   }
 
   render() {
+      let displayName = !!this.state.name ? this.state.name : this.props.name;
+      let displayFacebook = !!this.state.facebook ? this.state.facebook : this.props.facebook;
+      let displayRank = !!this.state.rank ? this.state.rank : this.props.rank;
     return (
         <div>
             <Grid>
@@ -104,15 +110,15 @@ class FormContainer extends Component {
                         <InputGroup>
                             <InputGroup.Addon>Name</InputGroup.Addon>
                                 <FormControl type="text" ref='name' name='name'
-                                value={this.state.name}
-                                onChange={this.handleChange}  />
+                                value={displayName}
+                                 onChange={this.handleChange}  />
                         </InputGroup>
                     </FormGroup>
                     <FormGroup bsSize="large">
                         <InputGroup>
                             <InputGroup.Addon>Facebook</InputGroup.Addon>
                                 <FormControl type="text" ref='facebook' name='facebook'
-                                value={this.state.facebook}
+                                value={displayFacebook}
                                 onChange={this.handleChange}  />
                         </InputGroup>
                     </FormGroup>
@@ -121,7 +127,7 @@ class FormContainer extends Component {
                             <InputGroup.Addon>Rank</InputGroup.Addon>
                                 <FormControl type="number" min="-10" max="99"
                                  ref='rank' name='rank'
-                                 value={this.state.rank}
+                                 value={displayRank}
                                  onChange={this.handleChange}  />
                         </InputGroup>
                     </FormGroup>
