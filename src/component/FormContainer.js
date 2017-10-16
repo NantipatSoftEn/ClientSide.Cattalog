@@ -7,6 +7,7 @@ import { Grid,Row,Col,FormGroup,InputGroup,FormControl,Button} from 'react-boots
 import AlertContainer from 'react-alert'
 
 
+import {browserHistory} from 'react-router'
 
 const initialState = {
     name:'',
@@ -63,6 +64,8 @@ class FormContainer extends Component {
         this.resetState();
 
         ReadySend = false;
+        browserHistory.replace("/pages")
+
         }
   }
   resetState() {

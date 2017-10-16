@@ -14,7 +14,7 @@ class Edit extends Component {
             return response.json()
         })
         .then(data =>
-            this.setState({person:data} )
+            this.setState({person:data} )   
         )
 
     }
