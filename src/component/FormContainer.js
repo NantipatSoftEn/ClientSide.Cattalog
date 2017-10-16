@@ -16,6 +16,8 @@ const initialState = {
 };
 
 let ReadySend  =  false;
+
+
 class FormContainer extends Component {
     constructor(props) {
 
@@ -23,7 +25,6 @@ class FormContainer extends Component {
 
 
         this.state = initialState;
-
 
 
         this.setState({upload:this.props.upload});
@@ -42,9 +43,11 @@ class FormContainer extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
+        const  id =  !!this.props.id ?  this.props.id: ''
         if (ReadySend) {
-            fetch('http://localhost:3001/c'+this.props.id, {
-                method: 'POST',
+            fetch('http://localhost:3001/c/'+id, {
+                method: 'PUT',
+                mode: 'CORS',
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json',
@@ -74,8 +77,7 @@ class FormContainer extends Component {
   CheckForsomeFormEmty(){
       return   this.state.name === '' ||
                this.state.facebook === '' ||
-               this.state.rank === '' ||
-               this.state.uploadedFileCloudinaryUrl === ''
+               this.state.rank === ''
   }
   showAlert = () => {
     if (this.state === initialState)
