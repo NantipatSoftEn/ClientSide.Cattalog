@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Grid,Row,Col,Image} from 'react-bootstrap';
-import FormContainer from './FormContainer'
+import FormContainer from './componentLv1/FormContainer'
 const initialState = { person:[]};
 class Edit extends Component {
     constructor(props) {
@@ -14,7 +14,7 @@ class Edit extends Component {
             return response.json()
         })
         .then(data =>
-            this.setState({person:data} )   
+            this.setState({person:data} )
         )
 
     }
