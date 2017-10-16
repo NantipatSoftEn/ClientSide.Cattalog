@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './bootstrap/app.css';
 import App from './component/App';
-import Home from './component/Home';
-import Pages from './component/Pages';
-import Edit from './component/Edit';
-import Delete from './component/Delete';
+import Home from './package/Home';
+import Pages from './package/Pages';
+import Edit from './package/Edit';
+import Delete from './package/Delete';
 
 import Upload from './component/Upload';
 import {
