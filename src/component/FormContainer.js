@@ -45,6 +45,7 @@ class FormContainer extends Component {
         event.preventDefault();
         let type = !!this.props.id ?  'PUT': 'POST';
         let  id =  !!this.props.id ?  this.props.id: ''
+
         if (ReadySend) {
             fetch('http://localhost:3001/c/'+id, {
                 method: type,
@@ -74,17 +75,18 @@ class FormContainer extends Component {
     time: 5000,
     transition: 'scale'
   }
-  CheckForsomeFormEmty(){
+  CheckForsomeValueEmty(){
       return   !this.state.name  ||
                !this.state.facebook  ||
-               !this.state.rank 
+               !this.state.rank
+
   }
   showAlert = () => {
     if (this.state === initialState)
         this.msg.error('ว่างเปล่า',
         {time: 2000,type: '',icon: '',});
 
-    else if (this.CheckForsomeFormEmty())
+    else if (this.CheckForsomeValueEmty())
              this.msg.info('ยังไม่กรอกข้อมูลบางอันเลยนะ',
              {time: 2000,type: 'success',icon: '',})
 
