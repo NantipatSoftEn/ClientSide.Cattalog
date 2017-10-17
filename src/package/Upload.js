@@ -4,7 +4,11 @@ import { Grid,Row,Col} from 'react-bootstrap';
 
 import ImageUploader from 'react-images-upload';
 
+<<<<<<< HEAD:src/package/Upload.js
 import FormContainer from './Component/FormContainer';
+=======
+import FormContainer from './componentLv1/FormContainer';
+>>>>>>> dev:src/component/Upload.js
 
 const CLOUDINARY_UPLOAD_PRESET = 'd6bx32ar';
 const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/soften57/upload';

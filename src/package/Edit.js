@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import { Grid,Row,Col,Image} from 'react-bootstrap';
+<<<<<<< HEAD:src/package/Edit.js
 import FormContainer from './ComponentLV2/FormContainer'
+=======
+import FormContainer from './componentLv1/FormContainer'
+>>>>>>> dev:src/component/Edit.js
 const initialState = { person:[]};
 class Edit extends Component {
     constructor(props) {
