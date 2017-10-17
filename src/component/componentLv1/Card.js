@@ -6,7 +6,7 @@ class Card extends Component {
 
   render() {
     return (
-        
+
         <Thumbnail src={this.props.img}  alt="242x200">
             <a href={this.props.facebook}>
                 <h3>{this.props.name}</h3>
@@ -19,7 +19,7 @@ class Card extends Component {
 
              <Button bsStyle="danger" >Delete</Button> &nbsp;
 
-            <Button bsStyle="success"> RanK: {}</Button>
+            <Button bsStyle="success"> RanK: {this.props.rank}</Button>
             </p>
         </Thumbnail>
     )
