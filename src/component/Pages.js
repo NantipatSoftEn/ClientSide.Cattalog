@@ -7,7 +7,11 @@ class Pages extends Component {
     state = {
         pages: [],
   }
-
+  onReloadPages = () => {
+     fetch('http://localhost:3001/c')
+       .then((response) => response.json())
+       .then((pages) => this.setState({ pages }))
+   }
   componentDidMount() {
     fetch('http://localhost:3001/c')
       .then(response => {return response.json()})
