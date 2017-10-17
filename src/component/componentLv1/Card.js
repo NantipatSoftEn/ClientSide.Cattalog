@@ -17,7 +17,10 @@ class Card extends Component {
                 Edit
             </Link> &nbsp;
 
-             <Button bsStyle="danger" >Delete</Button> &nbsp;
+            <Link to={{ pathname: `/Delete/${ this.props.id }` }}
+            className="btn btn-danger" >
+                Delete
+            </Link> &nbsp;
 
             <Button bsStyle="success"> RanK: {this.props.rank}</Button>
             </p>
