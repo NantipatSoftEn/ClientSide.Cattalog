@@ -6,7 +6,7 @@ class Card extends Component {
 
   render() {
     return (
-
+        
         <Thumbnail src={this.props.img}  alt="242x200">
             <a href={this.props.facebook}>
                 <h3>{this.props.name}</h3>

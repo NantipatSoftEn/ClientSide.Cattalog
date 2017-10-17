@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import fetch from 'isomorphic-fetch'
-import {Grid,Row,Col} from 'react-bootstrap';
+import {Grid,Row,Col,Button } from 'react-bootstrap';
 import Card from './componentLv1/Card'
 class Pages extends Component {
     /*  กรณีที่ api ไม่ส่งค่ามา  ต้องทำค่าเริ่มต้นให้มัน */
@@ -13,9 +13,7 @@ class Pages extends Component {
        .then((pages) => this.setState({ pages }))
    }
   componentDidMount() {
-    fetch('http://localhost:3001/c')
-      .then(response => {return response.json()})
-      .then(pages =>this.setState( {pages} ))
+    this.onReloadPages()
   }
 
 
@@ -23,6 +21,13 @@ class Pages extends Component {
     return (
             <div>
                 <Grid>
+                    <Row>
+                        <Col xs={8} md={12}>
+                            <Button bsStyle="warning"
+                            bsSize="large" onClick={this.onReloadPages}>Refresh</Button>
+                        </Col>
+                    </Row> <br />
+
                     <Row>
                     {
                     this.state.pages.map((page) => (
@@ -32,7 +37,8 @@ class Pages extends Component {
                             img={page.img}
                             name={page.name}
                             facebook={page.facebook}
-                            rank={page.rank} />
+                            rank={page.rank}
+                            />
                         </Col>
                         ))
                     }
