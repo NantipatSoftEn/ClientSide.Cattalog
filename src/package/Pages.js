@@ -24,7 +24,8 @@ class Pages extends Component {
                     <Row>
                         <Col xs={8} md={12}>
                             <Button bsStyle="warning"
-                            bsSize="large" onClick={this.onReloadPages}>Refresh</Button>
+                            bsSize="large" onClick={this.onReloadPages}>
+                            Refresh</Button>
                         </Col>
                     </Row> <br />
 
@@ -38,7 +39,7 @@ class Pages extends Component {
                             name={page.name}
                             facebook={page.facebook}
                             rank={page.rank}
-                            />
+                            onReloadPages={this.onReloadPages.bind(this)}/>
                         </Col>
                         ))
                     }

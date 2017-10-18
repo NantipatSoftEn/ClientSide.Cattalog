@@ -22,7 +22,7 @@ ReactDOM.render(
     <IndexRoute component={Home} />
      <Route path='/pages' component={Pages} />
      <Route path='/Edit/:id' component={Edit} />
-     <Route path='/Delete' component={Delete} />
+     <Route path='/Delete/:id' component={Delete} />
 
      <Route path='/test' component={Upload} />
    </Route>

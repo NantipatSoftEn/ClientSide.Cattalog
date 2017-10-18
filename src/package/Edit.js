@@ -31,10 +31,10 @@ class Edit extends Component {
                     <Image src={this.state.person.img} responsive />
                 </Col>
                 <FormContainer
-                name={this.state.person.name}
-                facebook={this.state.person.facebook}
-                rank={this.state.person.rank}
-                id={this.props.params.id}
+                    name={this.state.person.name}
+                    facebook={this.state.person.facebook}
+                    rank={this.state.person.rank}
+                    id={this.props.params.id}
                 />
                 </Row>
             </Grid>
