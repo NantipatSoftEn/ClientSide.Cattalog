@@ -3,16 +3,16 @@ import React, { Component } from 'react'
 import { Button,Thumbnail} from 'react-bootstrap';
 import { Link } from 'react-router'
 class Card extends Component {
-    // deleteData(id) {
-    //
-    //   fetch('http://localhost:3001/c/'+ id, {
-    //       method: 'DELETE',
-    //       headers: {
-    //           'Accept': 'application/json',
-    //           'Content-Type': 'application/json',
-    //       }
-    //   }).then(   response => response.json())
-    // }
+    deleteData() {
+
+      fetch('http://localhost:3001/c/'+ this.props.id, {
+          method: 'DELETE',
+          headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+          }
+      }).then(   response => response.json())
+    }
 
     /*
      Bug Function
@@ -22,7 +22,7 @@ class Card extends Component {
 
     return (
 
-        <Thumbnail src={this.props.img}  alt="242x200">
+        <Thumbnail src={this.props.img} >
             <a href={this.props.facebook}>
                 <h3>{this.props.name}</h3>
 
@@ -32,7 +32,7 @@ class Card extends Component {
             className="btn btn-primary" >
                 Edit
             </Link> &nbsp;
-            <Button bsStyle="danger" > Delete</Button> &nbsp;
+            <Button bsStyle="danger" onClick={this.deleteData.bind(this)}> Delete</Button> &nbsp;
 
             <Button bsStyle="success"> RanK: {this.props.rank}</Button>
             </p>

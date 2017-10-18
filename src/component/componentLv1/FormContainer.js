@@ -64,7 +64,7 @@ class FormContainer extends Component {
         this.resetState();
 
         ReadySend = false;
-        
+        browserHistory.replace("/pages")
 
         }
   }
