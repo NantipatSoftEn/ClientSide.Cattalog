@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import { Button,Thumbnail} from 'react-bootstrap';
 import { Link } from 'react-router'
-
+import './Card.css';
 class Card extends Component {
     deleteData() {
 
@@ -21,7 +21,7 @@ class Card extends Component {
   render() {
     return (
 
-        <Thumbnail src={this.props.img} width="100" height="100">
+        <Thumbnail src={this.props.img} alt="242x200">
             <a href={this.props.facebook}>
                 <h3>{this.props.name}</h3>
 
