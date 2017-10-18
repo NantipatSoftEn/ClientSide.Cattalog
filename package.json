@@ -7,6 +7,7 @@
     "react": "^15.6.2",
     "react-alert": "^2.3.0",
     "react-bootstrap": "^0.31.3",
+    "react-bootstrap-sweetalert": "^4.0.0",
     "react-dom": "^15.6.2",
     "react-file-input": "^0.2.5",
     "react-images-upload": "^1.1.1",
