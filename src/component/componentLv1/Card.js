@@ -12,14 +12,12 @@ class Card extends Component {
               'Content-Type': 'application/json',
           }
       }).then(   response => response.json())
+      .then(this.props.onReloadPages())
     }
-
-    /*
-     Bug Function
-    */
+    componentDidMount() {
+      this.props.onReloadPages();
+    }
   render() {
-      console.log(this.props.id);
-
     return (
 
         <Thumbnail src={this.props.img} >

@@ -39,7 +39,7 @@ class Pages extends Component {
                             name={page.name}
                             facebook={page.facebook}
                             rank={page.rank}
-                            />
+                            onReloadPages={this.onReloadPages.bind(this)}/>
                         </Col>
                         ))
                     }
