@@ -110,7 +110,7 @@ class FormContainer extends Component {
         <div>
             <Grid>
                 <Row>
-                    <Col xs={6} md={6} xsOffset={3}>
+                    <Col xs={6} md={7} xsOffset={3}>
 
                     <form onSubmit={this.handleSubmit} >
                     <FormGroup bsSize="large">

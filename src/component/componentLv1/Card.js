@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import { Button,Thumbnail} from 'react-bootstrap';
 import { Link } from 'react-router'
+
 class Card extends Component {
     deleteData() {
 
@@ -20,7 +21,7 @@ class Card extends Component {
   render() {
     return (
 
-        <Thumbnail src={this.props.img} >
+        <Thumbnail src={this.props.img} width="100" height="100">
             <a href={this.props.facebook}>
                 <h3>{this.props.name}</h3>
 
@@ -30,7 +31,10 @@ class Card extends Component {
             className="btn btn-primary" >
                 Edit
             </Link> &nbsp;
-            <Button bsStyle="danger" onClick={this.deleteData.bind(this)}> Delete</Button> &nbsp;
+
+
+
+            <Button bsStyle="danger" onClick={this.deleteData.bind(this)} > Delete</Button> &nbsp;
 
             <Button bsStyle="success"> RanK: {this.props.rank}</Button>
             </p>
