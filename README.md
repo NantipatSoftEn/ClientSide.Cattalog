@@ -25,3 +25,6 @@ npm start
  System delay upload images  Not sync data  
 
  ## Demo
+ ![Alt text](/images/1.png)
+ 
+ ![Alt text](/images/2.png)
